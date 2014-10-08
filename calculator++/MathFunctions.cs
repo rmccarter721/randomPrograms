@@ -12,7 +12,7 @@ namespace calculatorplusplus
     public static class MathFunctions
     {
 
-        static String validCharacters = "0123456789+-()/*%.";
+        static String validCharacters = "0123456789+-()/*.";
 
         /// <summary>
         /// Calculates the totals currently and updates text box
