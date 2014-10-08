@@ -1,0 +1,31 @@
+﻿<Window x:Name="MainWindow1" x:Class="calculatorplusplus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Calculator++" Height="316.845" Width="300.354" KeyDown="enterKeyPress">
+    <Grid x:Name="calcGrid">
+        <TextBox x:Name="calcDisplayBox" HorizontalAlignment="Center" Height="35" Margin="21,11,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" TextAlignment="Right" FontSize="20" TextChanged="checkAllCharsAreValid" Text="0" />
+
+        <!--Start Number Buttons-->
+        <Button x:Name="calcOne" Content="1" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="numberButtonClick"/>
+        <Button x:Name="calcTwo" Content="2" HorizontalAlignment="Left" Margin="65,61,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="numberButtonClick"/>
+        <Button x:Name="calcThree" Content="3" HorizontalAlignment="Left" Margin="120,61,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="numberButtonClick"/>
+        <Button x:Name="calcFour" Content="4" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="numberButtonClick"/>
+        <Button x:Name="calcFive" Content="5" HorizontalAlignment="Left" Margin="65,116,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="numberButtonClick"/>
+        <Button x:Name="calcSix" Content="6" HorizontalAlignment="Left" Margin="120,116,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="numberButtonClick"/>
+        <Button x:Name="calcSeven" Content="7" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="numberButtonClick"/>
+        <Button x:Name="calcEight" Content="8" HorizontalAlignment="Left" Margin="65,170,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="numberButtonClick"/>
+        <Button x:Name="calcNine" Content="9" HorizontalAlignment="Left" Margin="120,170,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="numberButtonClick"/>
+        <Button x:Name="calcZero" Content="0" HorizontalAlignment="Left" Margin="65,225,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="numberButtonClick"/>
+        <!--End Number Buttons-->
+
+        <Button x:Name="calcPlus" Content="+" HorizontalAlignment="Left" Margin="175,61,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="operatorButtonClick"/>
+        <Button x:Name="calcMinus" Content="-" HorizontalAlignment="Left" Margin="175,115,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="operatorButtonClick"/>
+        <Button x:Name="calcMultiply" Content="*" HorizontalAlignment="Left" Margin="230,61,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="operatorButtonClick"/>
+        <Button x:Name="calcDivide" Content="/" HorizontalAlignment="Left" Margin="230,116,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="operatorButtonClick"/>
+        <Button x:Name="calcModulus" Content="%" HorizontalAlignment="Left" Margin="175,170,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="operatorButtonClick"/>
+        <Button x:Name="calcPower" Content="^" HorizontalAlignment="Left" Margin="120,225,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="operatorButtonClick"/>
+        <Button x:Name="calcEquals" Content="=" HorizontalAlignment="Left" Margin="230,170,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="equalsButtonClick"/>
+        <Button x:Name="calcOpenBrackets" Content="(" HorizontalAlignment="Left" Margin="175,225,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+        <Button x:Name="calcCloseBrackets" Content=")" HorizontalAlignment="Left" Margin="230,225,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+    </Grid>
+</Window>
