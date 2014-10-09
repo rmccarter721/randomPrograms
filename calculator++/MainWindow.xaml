@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Calculator++" Height="316.845" Width="300.354" KeyDown="enterKeyPress">
     <Grid x:Name="calcGrid">
-        <TextBox x:Name="calcDisplayBox" HorizontalAlignment="Center" Height="35" Margin="21,11,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" TextAlignment="Right" FontSize="20"  />
+        <TextBox x:Name="calcDisplayBox" HorizontalAlignment="Center" Height="35" Margin="21,11,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" TextAlignment="Right" FontSize="20" TextChanged="displayBoxUpdated"/>
 
         <!--Start Number Buttons-->
         <Button x:Name="calcOne" Content="1" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="numberButtonClick"/>

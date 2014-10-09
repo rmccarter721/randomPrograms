@@ -35,9 +35,14 @@ namespace calculatorplusplus
         /// <param name="e"></param>
         private void enterKeyPress(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter && MathFunctions.checkLength(calcDisplayBox))
+            String value;
+            if (e.Key == Key.Enter && MathFunctions.checkLength(calcDisplayBox.Text, out value))
             {
-                calcDisplayBox.Text = MathFunctions.calculateTotal(calcDisplayBox.Text);
+                calcDisplayBox.Text = MathFunctions.calculateTotal(value);
+            }
+            else if (MathFunctions.checkLength(calcDisplayBox.Text, out value))
+            {
+                calcDisplayBox.Text = value;
             }
             calcDisplayBox.Select(calcDisplayBox.Text.Length, 0);
         }
@@ -61,10 +66,15 @@ namespace calculatorplusplus
         private void operatorButtonClick(object sender, RoutedEventArgs e)
         {
             calcDisplayBox.Text = MathFunctions.calculateTotal(calcDisplayBox.Text);
-            if(MathFunctions.checkLength(calcDisplayBox))
+            String value;
+            if(MathFunctions.checkLength(calcDisplayBox.Text, out value))
             {
                 calcDisplayBox.Select(calcDisplayBox.Text.Length, 0);
                 calcDisplayBox.Text += ((Button)sender).Content;
+            }
+            else
+            {
+                calcDisplayBox.Text = value;
             }
         }
 
@@ -79,9 +89,25 @@ namespace calculatorplusplus
             calcDisplayBox.Select(calcDisplayBox.Text.Length, 0);
         }
 
+        /// <summary>
+        /// Used to clear the display
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void clearClick(object sender, RoutedEventArgs e)
         {
             calcDisplayBox.Text = "";
+        }
+
+        /// <summary>
+        /// Used to ensure no invalid characters are entered into the textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void displayBoxUpdated(object sender, TextChangedEventArgs e)
+        {
+            calcDisplayBox.Text = MathFunctions.checkValidChars(calcDisplayBox.Text);
+            calcDisplayBox.Select(calcDisplayBox.Text.Length, 0);
         }
     }
 }

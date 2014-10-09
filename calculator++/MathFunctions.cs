@@ -35,19 +35,19 @@ namespace calculatorplusplus
         /// <summary>
         /// Method to compare the contents of the TextBox with a string of allowed characters.
         /// IF not remove invalid ones.
+        /// Only returns at the end incase a statement with multiple invalid chars is pasted in
         /// </summary>
         /// <param name="displayBox"></param>
-        public static void checkValidChars(TextBox displayBox)
+        public static String checkValidChars(String displayBox)
         {
-            for (int i = 0; i < displayBox.Text.Length; i++)
+            for (int i = 0; i < displayBox.Length; i++)
             {
-                if (!validCharacters.Contains(displayBox.Text.ElementAt(i)))
+                if (!validCharacters.Contains(displayBox.ElementAt(i)))
                 {
-                    displayBox.Text = displayBox.Text.Remove(i, 1);
-                    displayBox.Select(i, 0);
-                    break;
+                    displayBox = displayBox.Remove(i, 1);
                 }
             }
+            return displayBox;
         }
 
         /// <summary>
@@ -55,11 +55,12 @@ namespace calculatorplusplus
         /// </summary>
         /// <param name="displayBox"></param>
         /// <returnsTrue if length is ok, false if invalid></returns>
-        public static bool checkLength(TextBox displayBox)
+        public static bool checkLength(String displayBox, out String value)
         {
-            if (Math.Abs(Convert.ToDouble(calculateTotal(displayBox.Text))) > 9999999)
+            value = displayBox;
+            if (Math.Abs(Convert.ToDouble(calculateTotal(displayBox))) > 9999999)
             {
-                displayBox.Text = "0";
+                value = "0";
                 MessageBox.Show("Only numbers between -9999999 and 9999999 are valid.", "Huge Number Error");
                 return false;
             }
