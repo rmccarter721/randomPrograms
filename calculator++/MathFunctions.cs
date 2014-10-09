@@ -58,11 +58,17 @@ namespace calculatorplusplus
         public static bool checkLength(String displayBox, out String value)
         {
             value = displayBox;
-            if (Math.Abs(Convert.ToDouble(calculateTotal(displayBox))) > 9999999)
+            try
             {
-                value = "0";
-                MessageBox.Show("Only numbers between -9999999 and 9999999 are valid.", "Huge Number Error");
-                return false;
+                if (Math.Abs(Convert.ToDouble(calculateTotal(displayBox))) > 9999999)
+                {
+                    value = "0";
+                    MessageBox.Show("Only numbers between -9999999 and 9999999 are valid.", "Huge Number Error");
+                    return false;
+                }
+            }
+            catch (Exception)
+            { //Ignore the error as I check this on update, ie. before formula is finished..
             }
             return true;
         }
