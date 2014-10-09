@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Calculator++" Height="316.845" Width="300.354" KeyDown="enterKeyPress">
     <Grid x:Name="calcGrid">
-        <TextBox x:Name="calcDisplayBox" HorizontalAlignment="Center" Height="35" Margin="21,11,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" TextAlignment="Right" FontSize="20" TextChanged="checkAllCharsAreValid" />
+        <TextBox x:Name="calcDisplayBox" HorizontalAlignment="Center" Height="35" Margin="21,11,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" TextAlignment="Right" FontSize="20"  />
 
         <!--Start Number Buttons-->
         <Button x:Name="calcOne" Content="1" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="numberButtonClick"/>
@@ -25,7 +25,11 @@
         <Button x:Name="calcMultiply" Content="*" HorizontalAlignment="Left" Margin="230,61,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="operatorButtonClick"/>
         <Button x:Name="calcDivide" Content="/" HorizontalAlignment="Left" Margin="230,116,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="operatorButtonClick"/>
         <Button x:Name="calcEquals" Content="=" HorizontalAlignment="Left" Margin="230,225,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="equalsButtonClick"/>
-        <Button x:Name="calcOpenBrackets" Content="(" HorizontalAlignment="Left" Margin="175,170,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
-        <Button x:Name="calcCloseBrackets" Content=")" HorizontalAlignment="Left" Margin="230,170,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+        <Button x:Name="calcOpenBrackets" Content="(" HorizontalAlignment="Left" Margin="175,170,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="operatorButtonClick"/>
+        <Button x:Name="calcCloseBrackets" Content=")" HorizontalAlignment="Left" Margin="230,170,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="operatorButtonClick"/>
+
+        <!--Clear and Backspace-->
+        <Button x:Name="calcClear" Content="C" HorizontalAlignment="Left" Margin="175,225,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="clearClick"/>
+
     </Grid>
 </Window>

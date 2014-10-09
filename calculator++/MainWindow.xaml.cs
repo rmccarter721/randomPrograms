@@ -43,17 +43,6 @@ namespace calculatorplusplus
         }
 
         /// <summary>
-        ///  Iterate through all characters in the textbook and ensure they correspond
-        ///  the the values in the string validCharacters.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void checkAllCharsAreValid(object sender, TextChangedEventArgs e)
-        {
-            MathFunctions.checkValidChars(calcDisplayBox); 
-        }
-
-        /// <summary>
         /// Add a number (taken from the content field) to the text box
         /// </summary>
         /// <param name="sender"></param>
@@ -90,5 +79,9 @@ namespace calculatorplusplus
             calcDisplayBox.Select(calcDisplayBox.Text.Length, 0);
         }
 
+        private void clearClick(object sender, RoutedEventArgs e)
+        {
+            calcDisplayBox.Text = "";
+        }
     }
 }

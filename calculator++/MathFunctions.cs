@@ -17,13 +17,16 @@ namespace calculatorplusplus
         /// <summary>
         /// Calculates the totals currently and updates text box
         /// </summary>
+        /// <param name="value"></param>
+        /// <returnsThe value to go into the display box></returns>
         public static String calculateTotal(String value)
         {
             try
             {
-                return (Math.Round((decimal)new DataTable().Compute("0" + value, null), 4, MidpointRounding.AwayFromZero)).ToString();
+                double result = Convert.ToDouble(new System.Data.DataTable().Compute(value, null));
+                return (Math.Round(result, 4, MidpointRounding.AwayFromZero)).ToString();
             }  
-            catch (Exception)
+            catch (InvalidCastException)
             {
                 return value;
             }
@@ -47,9 +50,14 @@ namespace calculatorplusplus
             }
         }
 
+        /// <summary>
+        /// Method to actually check length of value
+        /// </summary>
+        /// <param name="displayBox"></param>
+        /// <returnsTrue if length is ok, false if invalid></returns>
         public static bool checkLength(TextBox displayBox)
         {
-            if (Math.Abs((decimal)new DataTable().Compute("0"+displayBox.Text, null)) > 9999999)
+            if (Math.Abs(Convert.ToDouble(calculateTotal(displayBox.Text))) > 9999999)
             {
                 displayBox.Text = "0";
                 MessageBox.Show("Only numbers between -9999999 and 9999999 are valid.", "Huge Number Error");
