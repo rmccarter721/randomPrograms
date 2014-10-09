@@ -26,7 +26,7 @@ namespace calculatorplusplus
                 double result = Convert.ToDouble(new System.Data.DataTable().Compute(value, null));
                 return (Math.Round(result, 4, MidpointRounding.AwayFromZero)).ToString();
             }  
-            catch (InvalidCastException)
+            catch (Exception)
             {
                 return value;
             }
