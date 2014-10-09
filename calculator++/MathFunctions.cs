@@ -18,7 +18,7 @@ namespace calculatorplusplus
         /// Calculates the totals currently and updates text box
         /// </summary>
         /// <param name="value"></param>
-        /// <returnsThe value to go into the display box></returns>
+        /// <returns>The value to go into the display box></returns>
         public static String calculateTotal(String value)
         {
             try
